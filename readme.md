@@ -11,12 +11,16 @@
 ## command 
 
 ```bash
+# build solr image with chinese support
 docker build -t solrcn .
 
+# run container
 docker run -d -v "$PWD/solrdata:/var/solr" -p 8983:8983 --name my_solr solrcn solr-precreate gettingstarted
 
 docker exec -it my_solr /bin/bash
 
+# create new core
+solr create_core -c
 ```
 
 
